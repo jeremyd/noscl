@@ -22,7 +22,7 @@ var kindNames = map[int]string{
 func printEvent(evt nostr.Event, nick *string, verbose bool) {
 	kind, ok := kindNames[evt.Kind]
 	if !ok {
-		kind = "Unknown Kind"
+		kind = fmt.Sprintf("Unknown Kind: %d", evt.Kind)
 	}
 
 	// Don't print encrypted messages that aren't for me

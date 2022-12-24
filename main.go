@@ -28,6 +28,7 @@ Usage:
   noscl event view [--verbose] <id>
   noscl event delete <id>
   noscl share-contacts
+  noscl get-contacts [--save]
   noscl key-gen
   noscl relay
   noscl relay add <url>
@@ -89,6 +90,12 @@ func main() {
 		message(opts)
 	case opts["share-contacts"].(bool):
 		shareContacts(opts)
+	case opts["get-contacts"].(bool):
+		getContacts(opts)
+		save, _ := opts.Bool("--save")
+		if save {
+			saveConfig(path)
+		}
 	case opts["key-gen"].(bool):
 		keyGen(opts)
 	case opts["metadata"].(bool):
