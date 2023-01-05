@@ -43,6 +43,7 @@ func getContacts(opts docopt.Opts) {
 					config.Following = append(config.Following, Follow{
 						Key: contact[1],
 					})
+					saveConfig("/tmp/nostr.json")
 				}
 			}
 		}

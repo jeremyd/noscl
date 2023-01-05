@@ -13,6 +13,7 @@ type Metadata struct {
 	Name    string `json:"name,omitempty"`
 	About   string `json:"about,omitempty"`
 	Picture string `json:"picture,omitempty"`
+	Nip05	string `json:"nip05,omitempty"`
 }
 
 func setMetadata(opts docopt.Opts) {
@@ -21,11 +22,13 @@ func setMetadata(opts docopt.Opts) {
 	name, _ := opts.String("--name")
 	about, _ := opts.String("--about")
 	picture, _ := opts.String("--picture")
+	nip05, _ := opts.String("--nip05")
 
 	jmetadata, _ := json.Marshal(Metadata{
 		Name:    name,
 		About:   about,
 		Picture: picture,
+		Nip05: nip05,
 	})
 
 	event, statuses, err := pool.PublishEvent(&nostr.Event{

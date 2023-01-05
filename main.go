@@ -21,7 +21,7 @@ Usage:
   noscl public
   noscl publish [--reference=<id>...] [--profile=<id>...] <content>
   noscl message [--reference=<id>...] <pubkey> <content>
-  noscl metadata --name=<name> [--about=<about>] [--picture=<picture>]
+  noscl metadata --name=<name> [--about=<about>] [--picture=<picture>] [--nip05=<nip05>]
   noscl profile [--verbose] <pubkey>
   noscl follow <pubkey> [--name=<name>]
   noscl unfollow <pubkey>
